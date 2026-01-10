@@ -16,16 +16,12 @@
       line-height: 1.6;
       color: #1a1a1a;
       background: #fafafa;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
 
     .container {
-      max-width: 600px;
-      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
     }
 
     h1 {
@@ -63,7 +59,7 @@
     .links {
       display: flex;
       gap: 1.5rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
 
     .links a {
@@ -78,48 +74,86 @@
       border-color: #1a1a1a;
     }
 
-    .projects h2 {
-      font-size: 1rem;
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    section h2 {
+      font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #888;
       margin-bottom: 1rem;
     }
 
-    .project {
+    .job {
       padding: 1rem 0;
       border-top: 1px solid #e5e5e5;
     }
 
-    .project:last-child {
+    .job:last-child {
       border-bottom: 1px solid #e5e5e5;
     }
 
-    .project a {
-      color: #1a1a1a;
-      text-decoration: none;
-      font-weight: 500;
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
-    .project a:hover {
-      text-decoration: underline;
+    .job-title {
+      font-weight: 600;
     }
 
-    .project p {
-      color: #666;
+    .job-company {
+      color: #444;
+    }
+
+    .job-date {
+      color: #888;
+      font-size: 0.85rem;
+    }
+
+    .job-desc {
+      color: #555;
       font-size: 0.9rem;
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
     }
 
     .award {
       display: inline-block;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 0.15rem 0.5rem;
+      padding: 0.1rem 0.5rem;
       border-radius: 0.25rem;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       margin-left: 0.5rem;
       vertical-align: middle;
+    }
+
+    .education-item, .community-item {
+      padding: 0.75rem 0;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .education-item:last-child, .community-item:last-child {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .edu-school {
+      font-weight: 600;
+    }
+
+    .edu-degree {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .edu-date {
+      color: #888;
+      font-size: 0.85rem;
     }
 
     @media (max-width: 480px) {
@@ -128,7 +162,12 @@
       }
 
       body {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 0.25rem;
       }
     }
   </style>
@@ -136,42 +175,106 @@
 <body>
   <main class="container">
     <h1>Lucas Florio</h1>
-    <p class="tagline">Software Engineer in Buenos Aires</p>
+    <p class="tagline">Senior Software Engineer in Buenos Aires</p>
 
     <p class="bio">
-      Problem solver who builds things with code. Currently at Community Phone.
-      I enjoy tackling complex challenges and mentoring teams along the way.
+      I like solving problems, mainly using Node.js, Ruby & Golang—but languages are just tools.
+      Working remotely from Buenos Aires, Argentina.
     </p>
 
     <div class="tech">
+      <span>Node.js</span>
       <span>Ruby</span>
       <span>Go</span>
-      <span>Node.js</span>
-      <span>JavaScript</span>
+      <span>Python</span>
+      <span>React</span>
     </div>
 
     <div class="links">
       <a href="https://github.com/lucasefe" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/lucasefe/" target="_blank">LinkedIn</a>
+      <a href="mailto:lucasefe@gmail.com">Email</a>
     </div>
 
-    <section class="projects">
-      <h2>Projects</h2>
+    <section>
+      <h2>Experience</h2>
 
-      <div class="project">
-        <a href="https://github.com/lucasefe/gn" target="_blank">gn</a>
-        <p>The simplest file generator you could ever find</p>
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Senior Software Engineer</span> <span class="job-company">at Community Phone</span></div>
+          <span class="job-date">2023 – Present</span>
+        </div>
       </div>
 
-      <div class="project">
-        <a href="https://github.com/lucasefe/eslint-plugin-align-assignments" target="_blank">eslint-plugin-align-assignments</a>
-        <p>ESLint rule for aligning assignment statements</p>
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Staff Engineer</span> <span class="job-company">at Vendasta</span></div>
+          <span class="job-date">2023</span>
+        </div>
+        <p class="job-desc">SMB initiatives, scalable software solutions</p>
       </div>
 
-      <div class="project">
-        <a href="https://www.chefsfeed.com" target="_blank">Chefs Feed</a>
-        <span class="award">Webby 2013 & 2014</span>
-        <p>Award-winning food discovery platform</p>
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Principal Engineer</span> <span class="job-company">at Broadly</span></div>
+          <span class="job-date">2017 – 2023</span>
+        </div>
+        <p class="job-desc">Full-stack development with Node.js, MongoDB. Architecture with SQS, Elasticsearch. Twilio, Google & Facebook integrations.</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Senior Software Engineer</span> <span class="job-company">at The Honest Company</span></div>
+          <span class="job-date">2016 – 2017</span>
+        </div>
+        <p class="job-desc">GraphQL API optimization in Golang, AWS infrastructure</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Software Engineer</span> <span class="job-company">at Zendesk</span></div>
+          <span class="job-date">2015 – 2016</span>
+        </div>
+        <p class="job-desc">Microservices infrastructure with Ruby, Node.js, and Scala</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span>
+            <span class="award">Webby 2013 & 2014</span>
+          </div>
+          <span class="job-date">2012 – 2015</span>
+        </div>
+        <p class="job-desc">Led development of APIs for iOS, Android, and web clients</p>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <div><span class="job-title">Lead Developer</span> <span class="job-company">at Red Intercable Digital</span></div>
+          <span class="job-date">2007 – 2010</span>
+        </div>
+        <p class="job-desc">Ruby on Rails applications</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Community</h2>
+      <div class="community-item">
+        <div class="job-header">
+          <div><span class="job-title">Board Member</span> <span class="job-company">at Ruby Argentina</span></div>
+          <span class="job-date">2011 – 2014</span>
+        </div>
+        <p class="job-desc">Organized annual RubyConf Argentina</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="education-item">
+        <div class="edu-school">Instituto Tecnológico ORT</div>
+        <div class="edu-degree">Systems Analyst</div>
+        <div class="edu-date">2003 – 2006</div>
       </div>
     </section>
   </main>
