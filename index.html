@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Florio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #fafafa;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .tagline {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .bio {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tech span {
+      background: #e9e9e9;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      color: #444;
+    }
+
+    .links {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .links a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #ddd;
+      transition: border-color 0.2s;
+    }
+
+    .links a:hover {
+      border-color: #1a1a1a;
+    }
+
+    .projects h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #888;
+      margin-bottom: 1rem;
+    }
+
+    .project {
+      padding: 1rem 0;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .project a {
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .project p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .award {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      body {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Lucas Florio</h1>
+    <p class="tagline">Software Engineer in Buenos Aires</p>
+
+    <p class="bio">
+      Problem solver who builds things with code. Currently at Community Phone.
+      I enjoy tackling complex challenges and mentoring teams along the way.
+    </p>
+
+    <div class="tech">
+      <span>Ruby</span>
+      <span>Go</span>
+      <span>Node.js</span>
+      <span>JavaScript</span>
+    </div>
+
+    <div class="links">
+      <a href="https://github.com/lucasefe" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/lucasefe/" target="_blank">LinkedIn</a>
+    </div>
+
+    <section class="projects">
+      <h2>Projects</h2>
+
+      <div class="project">
+        <a href="https://github.com/lucasefe/gn" target="_blank">gn</a>
+        <p>The simplest file generator you could ever find</p>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/lucasefe/eslint-plugin-align-assignments" target="_blank">eslint-plugin-align-assignments</a>
+        <p>ESLint rule for aligning assignment statements</p>
+      </div>
+
+      <div class="project">
+        <a href="https://www.chefsfeed.com" target="_blank">Chefs Feed</a>
+        <span class="award">Webby 2013 & 2014</span>
+        <p>Award-winning food discovery platform</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
