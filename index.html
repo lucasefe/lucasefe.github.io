@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lucasefe</title>
   <style>
+    :root {
+      --ctp-base: #1e1e2e;
+      --ctp-mantle: #181825;
+      --ctp-crust: #11111b;
+      --ctp-surface0: #313244;
+      --ctp-surface1: #45475a;
+      --ctp-surface2: #585b70;
+      --ctp-overlay0: #6c7086;
+      --ctp-overlay1: #7f849c;
+      --ctp-overlay2: #9399b2;
+      --ctp-subtext0: #a6adc8;
+      --ctp-subtext1: #bac2de;
+      --ctp-text: #cdd6f4;
+      --ctp-lavender: #b4befe;
+      --ctp-mauve: #cba6f7;
+      --ctp-peach: #fab387;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,45 +33,45 @@
       font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
       font-size: 14px;
       line-height: 1.6;
-      color: #0f0;
-      background: #0a0a0a;
+      color: var(--ctp-text);
+      background: var(--ctp-base);
       padding: 2rem;
       min-height: 100vh;
     }
 
     .container {
-      max-width: 720px;
+      max-width: 700px;
       margin: 0 auto;
     }
 
     .prompt::before {
       content: '$ ';
-      color: #888;
+      color: var(--ctp-overlay0);
     }
 
     h1 {
       font-size: 1rem;
       font-weight: normal;
-      color: #0f0;
+      color: var(--ctp-text);
       margin-bottom: 0.5rem;
     }
 
     h1 span {
-      color: #888;
+      color: var(--ctp-overlay1);
     }
 
     .ascii {
-      color: #0a0;
+      color: var(--ctp-surface2);
       margin-bottom: 1.5rem;
-      font-size: 11px;
+      font-size: 10px;
       line-height: 1.2;
     }
 
     .bio {
-      color: #999;
+      color: var(--ctp-subtext0);
       margin-bottom: 2rem;
       padding-left: 1rem;
-      border-left: 2px solid #333;
+      border-left: 1px solid var(--ctp-surface1);
     }
 
     .section {
@@ -61,13 +79,13 @@
     }
 
     .section-header {
-      color: #0af;
+      color: var(--ctp-subtext1);
       margin-bottom: 0.75rem;
     }
 
     .section-header::before {
       content: '# ';
-      color: #555;
+      color: var(--ctp-surface2);
     }
 
     .tags {
@@ -78,10 +96,10 @@
     }
 
     .tag {
-      color: #f0f;
-      background: #1a0a1a;
+      color: var(--ctp-subtext1);
+      background: var(--ctp-mantle);
       padding: 0.2rem 0.5rem;
-      border: 1px solid #303;
+      border: 1px solid var(--ctp-surface0);
     }
 
     .links {
@@ -89,73 +107,86 @@
     }
 
     .links a {
-      color: #0af;
+      color: var(--ctp-subtext1);
       text-decoration: none;
       margin-right: 1.5rem;
     }
 
     .links a:hover {
-      text-decoration: underline;
+      color: var(--ctp-lavender);
     }
 
     .links a::before {
       content: '-> ';
-      color: #555;
+      color: var(--ctp-surface2);
     }
 
     .job {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       padding-left: 1rem;
-      border-left: 1px solid #222;
+      border-left: 1px solid var(--ctp-surface0);
     }
 
-    .job-line {
-      color: #0f0;
+    .job-title {
+      color: var(--ctp-text);
     }
 
     .job-company {
-      color: #ff0;
+      color: var(--ctp-subtext0);
     }
 
-    .job-date {
-      color: #555;
+    .job-meta {
+      color: var(--ctp-overlay0);
       font-size: 0.85rem;
+      margin-bottom: 0.25rem;
     }
 
     .job-desc {
-      color: #666;
+      color: var(--ctp-overlay1);
       font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .job-desc li {
+      margin-left: 1rem;
+      list-style: none;
+    }
+
+    .job-desc li::before {
+      content: '- ';
+      color: var(--ctp-surface2);
     }
 
     .award {
-      color: #f0f;
+      color: var(--ctp-peach);
       font-size: 0.8rem;
+      border: 1px solid var(--ctp-surface1);
+      padding: 0 0.3rem;
     }
 
-    .edu, .community {
+    .edu {
       padding-left: 1rem;
-      border-left: 1px solid #222;
+      border-left: 1px solid var(--ctp-surface0);
+      margin-bottom: 1rem;
     }
 
     .edu-school {
-      color: #0f0;
+      color: var(--ctp-text);
     }
 
     .edu-detail {
-      color: #666;
+      color: var(--ctp-overlay0);
+      font-size: 0.9rem;
     }
 
     .cursor {
       animation: blink 1s infinite;
+      color: var(--ctp-overlay0);
     }
 
     @keyframes blink {
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
-    }
-
-    .comment {
-      color: #555;
     }
 
     @media (max-width: 480px) {
@@ -165,7 +196,7 @@
       }
 
       .ascii {
-        font-size: 8px;
+        font-size: 7px;
       }
     }
   </style>
@@ -185,7 +216,7 @@
 
     <div class="bio">
       <p>I like solving problems, mainly using Node.js, Ruby & Golang—but languages are just tools.</p>
-      <p class="comment">// Working remotely from Buenos Aires, Argentina</p>
+      <p>Working remotely from Buenos Aires, Argentina.</p>
     </div>
 
     <div class="section">
@@ -214,46 +245,98 @@
       <p class="section-header">experience</p>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Community Phone</span> <span class="job-date">2023-present</span></p>
-        <p class="job-desc">Senior Software Engineer</p>
+        <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at Community Phone</span></p>
+        <p class="job-meta">USA (remote) // 2023-present</p>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Vendasta</span> <span class="job-date">2023</span></p>
-        <p class="job-desc">Staff Engineer - SMB initiatives</p>
+        <p><span class="job-title">Staff Engineer</span> <span class="job-company">at Vendasta</span></p>
+        <p class="job-meta">Canada (remote) // 2023</p>
+        <ul class="job-desc">
+          <li>SMB initiatives, scalable software solutions</li>
+          <li>Cross-functional team collaboration</li>
+        </ul>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Broadly</span> <span class="job-date">2017-2023</span></p>
-        <p class="job-desc">Principal Engineer - Node.js, MongoDB, SQS, Elasticsearch</p>
+        <p><span class="job-title">Principal Engineer</span> <span class="job-company">at Broadly</span></p>
+        <p class="job-meta">San Francisco, USA (remote) // 2017-2023</p>
+        <ul class="job-desc">
+          <li>Full-stack development with Node.js, MongoDB, JavaScript</li>
+          <li>Architecture: Amazon SQS, Elasticsearch for queuing and indexing</li>
+          <li>Twilio, Google, and Facebook API integrations</li>
+          <li>Team leadership, backlog grooming, cross-functional collaboration</li>
+        </ul>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">The Honest Company</span> <span class="job-date">2016-2017</span></p>
-        <p class="job-desc">Senior Software Engineer - GraphQL, Golang, AWS</p>
+        <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at The Honest Company</span></p>
+        <p class="job-meta">San Francisco, USA (remote) // 2016-2017</p>
+        <ul class="job-desc">
+          <li>Developed and optimized GraphQL API endpoints in Golang</li>
+          <li>Migrated performance-critical endpoints from Rails to Go</li>
+          <li>AWS infrastructure management</li>
+        </ul>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Zendesk</span> <span class="job-date">2015-2016</span></p>
-        <p class="job-desc">Software Engineer - Microservices, Ruby, Node.js, Scala</p>
+        <p><span class="job-title">Software Engineer</span> <span class="job-company">at Zendesk</span></p>
+        <p class="job-meta">San Francisco, USA (remote) // 2015-2016</p>
+        <ul class="job-desc">
+          <li>Infrastructure team, microservices architecture</li>
+          <li>Ruby, Node.js, and Scala development</li>
+        </ul>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Chefs Feed</span> <span class="job-date">2012-2015</span> <span class="award">[WEBBY 2013 & 2014]</span></p>
-        <p class="job-desc">Senior Developer - API development for iOS, Android, web</p>
+        <p><span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span> <span class="award">WEBBY 2013 & 2014</span></p>
+        <p class="job-meta">San Francisco, USA (remote) // 2012-2015</p>
+        <ul class="job-desc">
+          <li>Led development of the platform APIs for iOS, Android, and web</li>
+          <li>Webby Award winner: Best Mobile Guide (2013), Best Reviews Website (2014)</li>
+        </ul>
       </div>
 
       <div class="job">
-        <p class="job-line"><span class="job-company">Red Intercable Digital</span> <span class="job-date">2007-2010</span></p>
-        <p class="job-desc">Lead Developer - Ruby on Rails</p>
+        <p><span class="job-title">Board Member</span> <span class="job-company">at Ruby Argentina</span></p>
+        <p class="job-meta">Buenos Aires, Argentina // 2011-2014</p>
+        <ul class="job-desc">
+          <li>Non-profit promoting Ruby in Argentina</li>
+          <li>Organized annual RubyConf Argentina</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="section">
-      <p class="section-header">community</p>
-      <div class="community">
-        <p><span class="job-company">Ruby Argentina</span> <span class="job-date">2011-2014</span></p>
-        <p class="job-desc">Board Member - RubyConf Argentina organizer</p>
+      <div class="job">
+        <p><span class="job-title">Developer</span> <span class="job-company">at SZ Studios</span></p>
+        <p class="job-meta">Buenos Aires, Argentina // 2010-2012</p>
+        <ul class="job-desc">
+          <li>Lead developer for MyCharityBox / Push-K Giving</li>
+          <li>Online donations platform</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p><span class="job-title">Lead Developer</span> <span class="job-company">at Red Intercable Digital</span></p>
+        <p class="job-meta">Buenos Aires, Argentina // 2007-2010</p>
+        <ul class="job-desc">
+          <li>Ruby on Rails applications for internal use</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p><span class="job-title">Co-owner</span> <span class="job-company">at Virtualizar</span></p>
+        <p class="job-meta">Buenos Aires, Argentina // 2006-2008</p>
+        <ul class="job-desc">
+          <li>Computer software consulting</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p><span class="job-title">SCM Administrator</span> <span class="job-company">at Banco Galicia</span></p>
+        <p class="job-meta">Buenos Aires, Argentina // 2006-2007</p>
+        <ul class="job-desc">
+          <li>ClearCase (source control) & ClearQuest (workflow) administration</li>
+        </ul>
       </div>
     </div>
 
@@ -261,7 +344,7 @@
       <p class="section-header">education</p>
       <div class="edu">
         <p class="edu-school">Instituto Tecnológico ORT</p>
-        <p class="edu-detail">Systems Analyst // 2003-2006</p>
+        <p class="edu-detail">Systems Analyst // Buenos Aires // 2003-2006</p>
       </div>
     </div>
 
