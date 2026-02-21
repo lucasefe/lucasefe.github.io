@@ -3,24 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lucasefe</title>
+  <title>Lucas Florio - Staff Engineer</title>
   <style>
     :root {
-      --ctp-base: #1e1e2e;
-      --ctp-mantle: #181825;
-      --ctp-crust: #11111b;
-      --ctp-surface0: #313244;
-      --ctp-surface1: #45475a;
-      --ctp-surface2: #585b70;
-      --ctp-overlay0: #6c7086;
-      --ctp-overlay1: #7f849c;
-      --ctp-overlay2: #9399b2;
-      --ctp-subtext0: #a6adc8;
-      --ctp-subtext1: #bac2de;
-      --ctp-text: #cdd6f4;
-      --ctp-lavender: #b4befe;
-      --ctp-mauve: #cba6f7;
-      --ctp-peach: #fab387;
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #e5e5e5;
+      --text-secondary: #a0a0a0;
+      --text-tertiary: #707070;
+      --accent-red: #E50914;
+      --accent-red-hover: #f40612;
+      --border-color: #333333;
     }
 
     * {
@@ -33,8 +26,8 @@
       font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
       font-size: 14px;
       line-height: 1.6;
-      color: var(--ctp-text);
-      background: var(--ctp-base);
+      color: var(--text-primary);
+      background: var(--bg-primary);
       padding: 2rem;
       min-height: 100vh;
     }
@@ -46,32 +39,25 @@
 
     .prompt::before {
       content: '$ ';
-      color: var(--ctp-overlay0);
+      color: var(--text-tertiary);
     }
 
     h1 {
       font-size: 1rem;
       font-weight: normal;
-      color: var(--ctp-text);
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
     }
 
     h1 span {
-      color: var(--ctp-overlay1);
-    }
-
-    .ascii {
-      color: var(--ctp-surface2);
-      margin-bottom: 1.5rem;
-      font-size: 10px;
-      line-height: 1.2;
+      color: var(--text-secondary);
     }
 
     .bio {
-      color: var(--ctp-subtext0);
+      color: var(--text-secondary);
       margin-bottom: 2rem;
       padding-left: 1rem;
-      border-left: 1px solid var(--ctp-surface1);
+      border-left: 1px solid var(--border-color);
     }
 
     .section {
@@ -79,13 +65,14 @@
     }
 
     .section-header {
-      color: var(--ctp-subtext1);
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
+      font-weight: bold;
     }
 
     .section-header::before {
       content: '# ';
-      color: var(--ctp-surface2);
+      color: var(--text-tertiary);
     }
 
     .tags {
@@ -96,10 +83,10 @@
     }
 
     .tag {
-      color: var(--ctp-subtext1);
-      background: var(--ctp-mantle);
+      color: var(--text-secondary);
+      background: var(--bg-secondary);
       padding: 0.2rem 0.5rem;
-      border: 1px solid var(--ctp-surface0);
+      border: 1px solid var(--border-color);
     }
 
     .links {
@@ -107,81 +94,91 @@
     }
 
     .links a {
-      color: var(--ctp-subtext1);
+      color: var(--text-secondary);
       text-decoration: none;
       margin-right: 1.5rem;
+      transition: color 0.2s;
     }
 
     .links a:hover {
-      color: var(--ctp-lavender);
+      color: var(--accent-red);
     }
 
     .links a::before {
-      content: '-> ';
-      color: var(--ctp-surface2);
+      content: '→ ';
+      color: var(--text-tertiary);
     }
 
-    .job {
+    .job, .project {
       margin-bottom: 1.25rem;
       padding-left: 1rem;
-      border-left: 1px solid var(--ctp-surface0);
+      border-left: 1px solid var(--border-color);
     }
 
-    .job-title {
-      color: var(--ctp-text);
+    .job-title, .project-title {
+      color: var(--text-primary);
     }
 
     .job-company {
-      color: var(--ctp-subtext0);
+      color: var(--text-secondary);
     }
 
     .job-meta {
-      color: var(--ctp-overlay0);
+      color: var(--text-tertiary);
       font-size: 0.85rem;
       margin-bottom: 0.25rem;
     }
 
-    .job-desc {
-      color: var(--ctp-overlay1);
+    .job-desc, .project-desc {
+      color: var(--text-secondary);
       font-size: 0.9rem;
       margin-top: 0.25rem;
     }
 
-    .job-desc li {
+    .job-desc li, .project-desc li {
       margin-left: 1rem;
       list-style: none;
     }
 
-    .job-desc li::before {
-      content: '- ';
-      color: var(--ctp-surface2);
+    .job-desc li::before, .project-desc li::before {
+      content: '• ';
+      color: var(--text-tertiary);
+    }
+
+    .project a {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      color: var(--accent-red-hover);
     }
 
     .award {
-      color: var(--ctp-peach);
+      color: var(--accent-red);
       font-size: 0.8rem;
-      border: 1px solid var(--ctp-surface1);
+      border: 1px solid var(--border-color);
       padding: 0 0.3rem;
     }
 
     .edu {
       padding-left: 1rem;
-      border-left: 1px solid var(--ctp-surface0);
+      border-left: 1px solid var(--border-color);
       margin-bottom: 1rem;
     }
 
     .edu-school {
-      color: var(--ctp-text);
+      color: var(--text-primary);
     }
 
     .edu-detail {
-      color: var(--ctp-overlay0);
+      color: var(--text-tertiary);
       font-size: 0.9rem;
     }
 
     .cursor {
       animation: blink 1s infinite;
-      color: var(--ctp-overlay0);
+      color: var(--text-tertiary);
     }
 
     @keyframes blink {
@@ -194,30 +191,19 @@
         padding: 1rem;
         font-size: 13px;
       }
-
-      .ascii {
-        font-size: 7px;
-      }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <pre class="ascii">
- _                        __
-| |_   _  ___ __ _ ___   / _| ___
-| | | | |/ __/ _` / __| | |_ / _ \
-| | |_| | (_| (_| \__ \ |  _|  __/
-|_|\__,_|\___\__,_|___/ |_|  \___|
-    </pre>
-
     <p class="prompt">whoami</p>
-    <h1>Lucas Florio <span>// Senior Software Engineer</span></h1>
+    <h1>Lucas Florio <span>// Staff Engineer · Backend Systems</span></h1>
 
     <div class="bio">
-      <p>I build products, not just code.</p>
-      <p>Golang, TypeScript, Ruby—languages are just tools.</p>
-      <p>Working remotely from Buenos Aires, Argentina.</p>
+      <p>I build scalable backend systems and developer tools.</p>
+      <p>20+ years experience with distributed systems, internal platforms, and infrastructure.</p>
+      <p>Go is my primary language, with deep experience in Ruby and TypeScript.</p>
+      <p>Remote from Buenos Aires, working with US companies since 2008.</p>
     </div>
 
     <div class="section">
@@ -225,11 +211,11 @@
       <div class="tags">
         <span class="tag">golang</span>
         <span class="tag">postgresql</span>
+        <span class="tag">distributed systems</span>
         <span class="tag">typescript</span>
-        <span class="tag">next.js</span>
-        <span class="tag">node.js</span>
-        <span class="tag">ruby</span>
+        <span class="tag">developer tooling</span>
         <span class="tag">aws</span>
+        <span class="tag">ruby</span>
       </div>
     </div>
 
@@ -242,14 +228,40 @@
     </div>
 
     <div class="section">
+      <p class="section-header">open source</p>
+
+      <div class="project">
+        <p><span class="project-title">seedup</span> – PostgreSQL migrations and seed data management CLI (Go)</p>
+        <p class="project-desc"><a href="https://github.com/lucasefe/seedup" target="_blank">github.com/lucasefe/seedup</a></p>
+      </div>
+
+      <div class="project">
+        <p><span class="project-title">ta</span> – Tmux automation for developer workflows (Go)</p>
+        <p class="project-desc"><a href="https://github.com/lucasefe/ta" target="_blank">github.com/lucasefe/ta</a></p>
+      </div>
+
+      <div class="project">
+        <p><span class="project-title">gn</span> – File generator for rapid development (Ruby)</p>
+        <p class="project-desc"><a href="https://github.com/lucasefe/gn" target="_blank">github.com/lucasefe/gn</a></p>
+      </div>
+
+      <div class="project">
+        <p><span class="project-title">themes_for_rails</span> – Theme support for Rails 3 (Ruby) · 309 stars</p>
+        <p class="project-desc"><a href="https://github.com/lucasefe/themes_for_rails" target="_blank">github.com/lucasefe/themes_for_rails</a></p>
+      </div>
+    </div>
+
+    <div class="section">
       <p class="section-header">experience</p>
 
       <div class="job">
         <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at Community Phone</span></p>
         <p class="job-meta">USA (remote) // 2023-present</p>
         <ul class="job-desc">
-          <li>Backend development with Golang and PostgreSQL</li>
+          <li>Backend development with Golang and PostgreSQL at scale</li>
           <li>Full-stack work with Next.js and TypeScript</li>
+          <li>Infrastructure automation and developer tooling</li>
+          <li>Built internal CLI tools for database migrations and workflows</li>
         </ul>
       </div>
 
@@ -257,8 +269,9 @@
         <p><span class="job-title">Staff Engineer</span> <span class="job-company">at Vendasta</span></p>
         <p class="job-meta">Canada (remote) // 2023</p>
         <ul class="job-desc">
-          <li>SMB initiatives, scalable software solutions</li>
-          <li>Cross-functional team collaboration</li>
+          <li>Platform engineering for SMB initiatives</li>
+          <li>Scalable distributed systems architecture</li>
+          <li>Cross-functional technical leadership</li>
         </ul>
       </div>
 
@@ -266,10 +279,10 @@
         <p><span class="job-title">Principal Engineer</span> <span class="job-company">at Broadly</span></p>
         <p class="job-meta">San Francisco, USA (remote) // 2017-2023</p>
         <ul class="job-desc">
-          <li>Full-stack development with Node.js, MongoDB, JavaScript</li>
-          <li>Architecture: Amazon SQS, Elasticsearch for queuing and indexing</li>
-          <li>Twilio, Google, and Facebook API integrations</li>
-          <li>Team leadership, backlog grooming, cross-functional collaboration</li>
+          <li>Full-stack platform development with Node.js, MongoDB, JavaScript</li>
+          <li>Distributed systems: Amazon SQS, Elasticsearch, event-driven architecture</li>
+          <li>API integrations: Twilio, Google, Facebook at scale</li>
+          <li>Technical leadership, architecture decisions, team mentorship</li>
         </ul>
       </div>
 
@@ -277,9 +290,9 @@
         <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at The Honest Company</span></p>
         <p class="job-meta">San Francisco, USA (remote) // 2016-2017</p>
         <ul class="job-desc">
-          <li>Developed and optimized GraphQL API endpoints in Golang</li>
-          <li>Migrated performance-critical endpoints from Rails to Go</li>
-          <li>AWS infrastructure management</li>
+          <li>Built high-performance GraphQL API in Golang</li>
+          <li>Migrated critical endpoints from Rails to Go for performance</li>
+          <li>AWS infrastructure, distributed backend services</li>
         </ul>
       </div>
 
@@ -288,15 +301,17 @@
         <p class="job-meta">San Francisco, USA (remote) // 2015-2016</p>
         <ul class="job-desc">
           <li>Infrastructure team, microservices architecture</li>
-          <li>Ruby, Node.js, and Scala development</li>
+          <li>Backend development: Ruby, Node.js, Scala</li>
+          <li>Platform reliability and scalability</li>
         </ul>
       </div>
 
       <div class="job">
-        <p><span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span> <span class="award">WEBBY 2013 & 2014</span></p>
+        <p><span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span> <span class="award">⭐ WEBBY 2013 & 2014</span></p>
         <p class="job-meta">San Francisco, USA (remote) // 2012-2015</p>
         <ul class="job-desc">
-          <li>Led development of the platform APIs for iOS, Android, and web</li>
+          <li>Led development of platform APIs for iOS, Android, and web</li>
+          <li>Ruby/Rails backend, high-traffic consumer application</li>
           <li>Webby Award winner: Best Mobile Guide (2013), Best Reviews Website (2014)</li>
         </ul>
       </div>
@@ -307,39 +322,6 @@
         <ul class="job-desc">
           <li>Non-profit promoting Ruby in Argentina</li>
           <li>Organized annual RubyConf Argentina</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p><span class="job-title">Developer</span> <span class="job-company">at SZ Studios</span></p>
-        <p class="job-meta">Buenos Aires, Argentina // 2010-2012</p>
-        <ul class="job-desc">
-          <li>Lead developer for MyCharityBox / Push-K Giving</li>
-          <li>Online donations platform</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p><span class="job-title">Lead Developer</span> <span class="job-company">at Red Intercable Digital</span></p>
-        <p class="job-meta">Buenos Aires, Argentina // 2007-2010</p>
-        <ul class="job-desc">
-          <li>Ruby on Rails applications for internal use</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p><span class="job-title">Co-owner</span> <span class="job-company">at Virtualizar</span></p>
-        <p class="job-meta">Buenos Aires, Argentina // 2006-2008</p>
-        <ul class="job-desc">
-          <li>Computer software consulting</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p><span class="job-title">SCM Administrator</span> <span class="job-company">at Banco Galicia</span></p>
-        <p class="job-meta">Buenos Aires, Argentina // 2006-2007</p>
-        <ul class="job-desc">
-          <li>ClearCase (source control) & ClearQuest (workflow) administration</li>
         </ul>
       </div>
     </div>
