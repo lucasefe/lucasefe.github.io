@@ -6,14 +6,14 @@
   <title>Lucas Florio - Staff Engineer</title>
   <style>
     :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #1a1a1a;
-      --text-primary: #e5e5e5;
-      --text-secondary: #a0a0a0;
-      --text-tertiary: #707070;
+      --bg: #ffffff;
+      --text-primary: #24292f;
+      --text-secondary: #57606a;
+      --text-tertiary: #656d76;
       --accent-red: #E50914;
       --accent-red-hover: #f40612;
-      --border-color: #333333;
+      --border: #d0d7de;
+      --border-light: #e8eaed;
     }
 
     * {
@@ -23,318 +23,354 @@
     }
 
     body {
-      font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Consolas', monospace;
-      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 16px;
       line-height: 1.6;
       color: var(--text-primary);
-      background: var(--bg-primary);
-      padding: 2rem;
-      min-height: 100vh;
+      background: var(--bg);
+      padding: 3rem 1.5rem;
     }
 
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
-    .prompt::before {
-      content: '$ ';
-      color: var(--text-tertiary);
-    }
-
     h1 {
-      font-size: 1rem;
-      font-weight: normal;
+      font-size: 2rem;
+      font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     h1 span {
       color: var(--text-secondary);
+      font-weight: 400;
+      font-size: 1.25rem;
     }
 
     .bio {
       color: var(--text-secondary);
-      margin-bottom: 2rem;
-      padding-left: 1rem;
-      border-left: 1px solid var(--border-color);
+      font-size: 1.05rem;
+      margin: 1.5rem 0 2.5rem 0;
+      line-height: 1.7;
     }
 
     .section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     .section-header {
+      font-size: 1.5rem;
+      font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 0.75rem;
-      font-weight: bold;
-    }
-
-    .section-header::before {
-      content: '# ';
-      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light);
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 2rem;
     }
 
     .tag {
       color: var(--text-secondary);
-      background: var(--bg-secondary);
-      padding: 0.2rem 0.5rem;
-      border: 1px solid var(--border-color);
+      background: #f6f8fa;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
     }
 
     .links {
-      margin-bottom: 2rem;
+      display: flex;
+      gap: 1.5rem;
     }
 
     .links a {
-      color: var(--text-secondary);
+      color: var(--accent-red);
       text-decoration: none;
-      margin-right: 1.5rem;
+      font-weight: 500;
       transition: color 0.2s;
     }
 
     .links a:hover {
-      color: var(--accent-red);
-    }
-
-    .links a::before {
-      content: '→ ';
-      color: var(--text-tertiary);
+      color: var(--accent-red-hover);
+      text-decoration: underline;
     }
 
     .job, .project {
-      margin-bottom: 1.25rem;
-      padding-left: 1rem;
-      border-left: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .job:last-child, .project:last-child {
+      border-bottom: none;
     }
 
     .job-title, .project-title {
+      font-size: 1.125rem;
+      font-weight: 600;
       color: var(--text-primary);
     }
 
     .job-company {
       color: var(--text-secondary);
+      font-weight: 400;
     }
 
     .job-meta {
       color: var(--text-tertiary);
-      font-size: 0.85rem;
-      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+      margin: 0.25rem 0 0.75rem 0;
     }
 
     .job-desc, .project-desc {
       color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-top: 0.25rem;
+      margin-top: 0.75rem;
+    }
+
+    .job-desc ul, .project-desc ul {
+      list-style: none;
+      padding-left: 0;
     }
 
     .job-desc li, .project-desc li {
-      margin-left: 1rem;
-      list-style: none;
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.4rem;
     }
 
     .job-desc li::before, .project-desc li::before {
-      content: '• ';
+      content: '•';
+      position: absolute;
+      left: 0.5rem;
       color: var(--text-tertiary);
     }
 
-    .project a {
+    .project-link {
       color: var(--accent-red);
       text-decoration: none;
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+      display: inline-block;
     }
 
-    .project a:hover {
-      color: var(--accent-red-hover);
+    .project-link:hover {
+      text-decoration: underline;
     }
 
     .award {
+      display: inline-block;
       color: var(--accent-red);
-      font-size: 0.8rem;
-      border: 1px solid var(--border-color);
-      padding: 0 0.3rem;
+      font-size: 0.85rem;
+      border: 1px solid var(--accent-red);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      font-weight: 500;
     }
 
     .edu {
-      padding-left: 1rem;
-      border-left: 1px solid var(--border-color);
       margin-bottom: 1rem;
     }
 
     .edu-school {
+      font-size: 1.125rem;
+      font-weight: 600;
       color: var(--text-primary);
     }
 
     .edu-detail {
       color: var(--text-tertiary);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
     }
 
-    .cursor {
-      animation: blink 1s infinite;
-      color: var(--text-tertiary);
-    }
-
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
-    }
-
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       body {
-        padding: 1rem;
-        font-size: 13px;
+        padding: 2rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h1 span {
+        display: block;
+        margin-top: 0.25rem;
+        font-size: 1.1rem;
+      }
+
+      .section-header {
+        font-size: 1.3rem;
+      }
+
+      .links {
+        flex-direction: column;
+        gap: 0.75rem;
       }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <p class="prompt">whoami</p>
-    <h1>Lucas Florio <span>// Staff Engineer · Backend Systems</span></h1>
+    <h1>Lucas Florio<br><span>Staff Engineer · Backend Systems</span></h1>
 
     <div class="bio">
       <p>I build scalable backend systems and developer tools.</p>
-      <p>20+ years experience with distributed systems, internal platforms, and infrastructure.</p>
-      <p>Go is my primary language, with deep experience in Ruby and TypeScript.</p>
+      <p>20+ years experience with distributed systems, internal platforms, and infrastructure. Go is my primary language, with deep experience in Ruby and TypeScript.</p>
       <p>Remote from Buenos Aires, working with US companies since 2008.</p>
     </div>
 
     <div class="section">
-      <p class="section-header">stack</p>
+      <h2 class="section-header">Stack</h2>
       <div class="tags">
-        <span class="tag">golang</span>
-        <span class="tag">postgresql</span>
-        <span class="tag">distributed systems</span>
-        <span class="tag">typescript</span>
-        <span class="tag">developer tooling</span>
-        <span class="tag">aws</span>
-        <span class="tag">ruby</span>
+        <span class="tag">Golang</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Distributed Systems</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Developer Tooling</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Ruby</span>
       </div>
     </div>
 
     <div class="section">
-      <p class="section-header">links</p>
+      <h2 class="section-header">Links</h2>
       <div class="links">
-        <a href="https://github.com/lucasefe" target="_blank">github</a>
-        <a href="https://www.linkedin.com/in/lucasefe/" target="_blank">linkedin</a>
+        <a href="https://github.com/lucasefe" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/lucasefe/" target="_blank">LinkedIn</a>
       </div>
     </div>
 
     <div class="section">
-      <p class="section-header">open source</p>
+      <h2 class="section-header">Open Source</h2>
 
       <div class="project">
-        <p><span class="project-title">seedup</span> – PostgreSQL migrations and seed data management CLI (Go)</p>
-        <p class="project-desc"><a href="https://github.com/lucasefe/seedup" target="_blank">github.com/lucasefe/seedup</a></p>
+        <p class="project-title">seedup</p>
+        <p class="project-desc">PostgreSQL migrations and seed data management CLI written in Go</p>
+        <a href="https://github.com/lucasefe/seedup" target="_blank" class="project-link">github.com/lucasefe/seedup →</a>
       </div>
 
       <div class="project">
-        <p><span class="project-title">ta</span> – Tmux automation for developer workflows (Go)</p>
-        <p class="project-desc"><a href="https://github.com/lucasefe/ta" target="_blank">github.com/lucasefe/ta</a></p>
+        <p class="project-title">ta</p>
+        <p class="project-desc">Tmux automation for developer workflows (Go)</p>
+        <a href="https://github.com/lucasefe/ta" target="_blank" class="project-link">github.com/lucasefe/ta →</a>
       </div>
 
       <div class="project">
-        <p><span class="project-title">gn</span> – File generator for rapid development (Ruby)</p>
-        <p class="project-desc"><a href="https://github.com/lucasefe/gn" target="_blank">github.com/lucasefe/gn</a></p>
+        <p class="project-title">gn</p>
+        <p class="project-desc">File generator for rapid development (Ruby)</p>
+        <a href="https://github.com/lucasefe/gn" target="_blank" class="project-link">github.com/lucasefe/gn →</a>
       </div>
 
       <div class="project">
-        <p><span class="project-title">themes_for_rails</span> – Theme support for Rails 3 (Ruby) · 309 stars</p>
-        <p class="project-desc"><a href="https://github.com/lucasefe/themes_for_rails" target="_blank">github.com/lucasefe/themes_for_rails</a></p>
+        <p class="project-title">themes_for_rails</p>
+        <p class="project-desc">Theme support for Rails 3 (Ruby) · 309 stars</p>
+        <a href="https://github.com/lucasefe/themes_for_rails" target="_blank" class="project-link">github.com/lucasefe/themes_for_rails →</a>
       </div>
     </div>
 
     <div class="section">
-      <p class="section-header">experience</p>
+      <h2 class="section-header">Experience</h2>
 
       <div class="job">
         <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at Community Phone</span></p>
-        <p class="job-meta">USA (remote) // 2023-present</p>
-        <ul class="job-desc">
-          <li>Backend development with Golang and PostgreSQL at scale</li>
-          <li>Full-stack work with Next.js and TypeScript</li>
-          <li>Infrastructure automation and developer tooling</li>
-          <li>Built internal CLI tools for database migrations and workflows</li>
-        </ul>
+        <p class="job-meta">USA (remote) · 2023-present</p>
+        <div class="job-desc">
+          <ul>
+            <li>Backend development with Golang and PostgreSQL at scale</li>
+            <li>Full-stack work with Next.js and TypeScript</li>
+            <li>Infrastructure automation and developer tooling</li>
+            <li>Built internal CLI tools for database migrations and workflows</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
         <p><span class="job-title">Staff Engineer</span> <span class="job-company">at Vendasta</span></p>
-        <p class="job-meta">Canada (remote) // 2023</p>
-        <ul class="job-desc">
-          <li>Platform engineering for SMB initiatives</li>
-          <li>Scalable distributed systems architecture</li>
-          <li>Cross-functional technical leadership</li>
-        </ul>
+        <p class="job-meta">Canada (remote) · 2023</p>
+        <div class="job-desc">
+          <ul>
+            <li>Platform engineering for SMB initiatives</li>
+            <li>Scalable distributed systems architecture</li>
+            <li>Cross-functional technical leadership</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
         <p><span class="job-title">Principal Engineer</span> <span class="job-company">at Broadly</span></p>
-        <p class="job-meta">San Francisco, USA (remote) // 2017-2023</p>
-        <ul class="job-desc">
-          <li>Full-stack platform development with Node.js, MongoDB, JavaScript</li>
-          <li>Distributed systems: Amazon SQS, Elasticsearch, event-driven architecture</li>
-          <li>API integrations: Twilio, Google, Facebook at scale</li>
-          <li>Technical leadership, architecture decisions, team mentorship</li>
-        </ul>
+        <p class="job-meta">San Francisco, USA (remote) · 2017-2023</p>
+        <div class="job-desc">
+          <ul>
+            <li>Full-stack platform development with Node.js, MongoDB, JavaScript</li>
+            <li>Distributed systems: Amazon SQS, Elasticsearch, event-driven architecture</li>
+            <li>API integrations: Twilio, Google, Facebook at scale</li>
+            <li>Technical leadership, architecture decisions, team mentorship</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
         <p><span class="job-title">Senior Software Engineer</span> <span class="job-company">at The Honest Company</span></p>
-        <p class="job-meta">San Francisco, USA (remote) // 2016-2017</p>
-        <ul class="job-desc">
-          <li>Built high-performance GraphQL API in Golang</li>
-          <li>Migrated critical endpoints from Rails to Go for performance</li>
-          <li>AWS infrastructure, distributed backend services</li>
-        </ul>
+        <p class="job-meta">San Francisco, USA (remote) · 2016-2017</p>
+        <div class="job-desc">
+          <ul>
+            <li>Built high-performance GraphQL API in Golang</li>
+            <li>Migrated critical endpoints from Rails to Go for performance</li>
+            <li>AWS infrastructure, distributed backend services</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
         <p><span class="job-title">Software Engineer</span> <span class="job-company">at Zendesk</span></p>
-        <p class="job-meta">San Francisco, USA (remote) // 2015-2016</p>
-        <ul class="job-desc">
-          <li>Infrastructure team, microservices architecture</li>
-          <li>Backend development: Ruby, Node.js, Scala</li>
-          <li>Platform reliability and scalability</li>
-        </ul>
+        <p class="job-meta">San Francisco, USA (remote) · 2015-2016</p>
+        <div class="job-desc">
+          <ul>
+            <li>Infrastructure team, microservices architecture</li>
+            <li>Backend development: Ruby, Node.js, Scala</li>
+            <li>Platform reliability and scalability</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
-        <p><span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span> <span class="award">⭐ WEBBY 2013 & 2014</span></p>
-        <p class="job-meta">San Francisco, USA (remote) // 2012-2015</p>
-        <ul class="job-desc">
-          <li>Led development of platform APIs for iOS, Android, and web</li>
-          <li>Ruby/Rails backend, high-traffic consumer application</li>
-          <li>Webby Award winner: Best Mobile Guide (2013), Best Reviews Website (2014)</li>
-        </ul>
+        <p><span class="job-title">Senior Developer</span> <span class="job-company">at Chefs Feed</span> <span class="award">⭐ Webby 2013 & 2014</span></p>
+        <p class="job-meta">San Francisco, USA (remote) · 2012-2015</p>
+        <div class="job-desc">
+          <ul>
+            <li>Led development of platform APIs for iOS, Android, and web</li>
+            <li>Ruby/Rails backend, high-traffic consumer application</li>
+            <li>Webby Award winner: Best Mobile Guide (2013), Best Reviews Website (2014)</li>
+          </ul>
+        </div>
       </div>
 
       <div class="job">
         <p><span class="job-title">Board Member</span> <span class="job-company">at Ruby Argentina</span></p>
-        <p class="job-meta">Buenos Aires, Argentina // 2011-2014</p>
-        <ul class="job-desc">
-          <li>Non-profit promoting Ruby in Argentina</li>
-          <li>Organized annual RubyConf Argentina</li>
-        </ul>
+        <p class="job-meta">Buenos Aires, Argentina · 2011-2014</p>
+        <div class="job-desc">
+          <ul>
+            <li>Non-profit promoting Ruby in Argentina</li>
+            <li>Organized annual RubyConf Argentina</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="section">
-      <p class="section-header">education</p>
+      <h2 class="section-header">Education</h2>
       <div class="edu">
         <p class="edu-school">Instituto Tecnológico ORT</p>
-        <p class="edu-detail">Systems Analyst // Buenos Aires // 2003-2006</p>
+        <p class="edu-detail">Systems Analyst · Buenos Aires · 2003-2006</p>
       </div>
     </div>
-
-    <p class="prompt" style="margin-top: 2rem;">_<span class="cursor">▌</span></p>
   </main>
 </body>
 </html>
